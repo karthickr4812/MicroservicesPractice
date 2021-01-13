@@ -32,7 +32,7 @@ public class JobInvokerController{
 	Job inserttoMultipleClient;
 
 	@GetMapping("/runBatch")
-	//@Scheduled(cron = "0 * 14 ? * *")
+	@Scheduled(cron = "0 * 14 ? * *")
 	public BatchStatus load() throws JobParametersInvalidException, JobExecutionAlreadyRunningException, JobRestartException, JobInstanceAlreadyCompleteException
 	{
 		JobParameters jobParameters = new JobParametersBuilder()
@@ -49,7 +49,7 @@ public class JobInvokerController{
 	}
 	
 	@GetMapping("/runBatchMultiple")
-	//@Scheduled(cron = "0 * 14 ? * *")
+	@Scheduled(cron = "0 * 14 ? * *")
 	public BatchStatus inserttoMultipleClient() throws JobParametersInvalidException, JobExecutionAlreadyRunningException, JobRestartException, JobInstanceAlreadyCompleteException
 	{
 		JobParameters jobParameters = new JobParametersBuilder()
@@ -65,5 +65,3 @@ public class JobInvokerController{
         return jobExecution.getStatus();
 	}
 }
-	
-
