@@ -1,1 +1,0 @@
-ALTER TABLE employee AUTO_INCREMENT=1;
